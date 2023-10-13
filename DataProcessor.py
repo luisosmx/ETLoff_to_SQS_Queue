@@ -80,4 +80,3 @@ if __name__ == "__main__":
     data_processor.process_and_store_data()
 
 
-awslocal sqs receive-message --queue-url http://localhost:4566/000000000000/login-queue
