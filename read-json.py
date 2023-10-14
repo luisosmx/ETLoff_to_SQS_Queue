@@ -2,6 +2,9 @@ import pandas as pd
 import boto3
 import json
 from sqlalchemy import create_engine
+from cryptography.fernet import Fernet
+
+encryption_key = Fernet.generate_key()
 
 sqs = boto3.client('sqs', endpoint_url='http://localhost:4566')
 
@@ -32,12 +35,18 @@ while True:
         break
 
 masked_data = []
-
+fernet = Fernet(encryption_key)
 for item in user_login:
     item_dict = json.loads(item)
-    item_dict['device_id'] = '*** Masked ***'
-    item_dict['ip'] = '*** Masked ***'
-    masked_data.append(item_dict)
+
+    print(f'Existing data:'{item_dict})
+
+    if 'device_id' in item_dict and 'ip' in item_dict:
+        item_dict['device_id'] = fernet.encrypt(item_dict['device_id'].encode()).decode()
+        item_dict['ip'] = fernet.encrypt(item_dict['ip'].encode()).decode()
+        masked_data.append(item_dict)
+    else:
+        print("Error: There is no data")
 
 df = pd.DataFrame(masked_data)
 
