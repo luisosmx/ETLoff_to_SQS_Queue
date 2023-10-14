@@ -3,7 +3,7 @@
 This README provides a step-by-step guide to setting up a development environment that includes Docker, AWS CLI, LocalStack, and PostgreSQL on Windows Subsystem for Linux (WSL 2), using Python and Visual Studio Code.
 
 
-![Diagram](Images\challenge.jpg)
+![Diagram](Images/challenge.jpg)
 
 
 ## Previous requirements
@@ -181,5 +181,5 @@ pip install cryptography
 
 - We have to visualize something similar to the image:
 
-    ![Terminal](Images\terminal.png)
+    ![Terminal](Images/terminal.png)
 
