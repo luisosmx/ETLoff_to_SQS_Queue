@@ -77,7 +77,7 @@ If you have questions about configuring Docker Desktop to use WSL 2, you can rev
 
 ### 4. Creating a Python Project in Visual Studio Code
 
-Open Visual Studio Code and create a new Python project. Make sure you configure the Python interpreter to use your virtual environment in WSL 2.
+Open Visual Studio Code and create a new Python project. Open another terminal and make sure to configure the Python interpreter to use your virtual environment in WSL 2
 
 ### 5. Creation of a Virtual Environment
 
@@ -105,6 +105,32 @@ Open Visual Studio Code and create a new Python project. Make sure you configure
 
 Install the necessary dependencies for your Python project in the virtual environment.
 
+For this project it is necessary to install the following dependencies:
+
+- Pandas
+
+```bash
+pip install pandas
+```
+
+- Boto3
+
+```bash
+pip install boto3
+```
+
+- SQLAlchemy:
+
+```bash
+pip install SQLAlchemy
+```
+
+- Cryptography (Fernet is included in this library)
+
+```bash
+pip install cryptography
+```
+
 ### 8. Docker Compose configuration
 
 - Create a [docker-compose.yml](docker-compose.yaml) file in your project to define the Docker services you need, such as PostgreSQL. Configure the connection to PostgreSQL in this file.
@@ -127,6 +153,33 @@ Install the necessary dependencies for your Python project in the virtual enviro
 
 ### 10. Application Development
 
-- Develop your Python application in Visual Studio Code. Use the AWS SDK for Python (Boto3) libraries to interact with AWS services simulated by LocalStack
+- Here we are only going to execute the code that contains the [DataProcessor.py](DataProcessor.py) class that is configured to read the files from the AWS environment, encrypt the 'device_id' and 'ip' values and subsequently create a dataframe and upload them to Postgres.
 
-- Run your application in the virtual environment and check that it works correctly with LocalStack and PostgreSQL.
+- We run the following command to receive a message from the SQS queue called login-queue in the local environment emulated by LocalStack. This is useful for testing and debugging interaction with AWS SQS services.
+
+    ```bash
+    awslocal sqs receive-message --queue-url http://localhost:4566/000000000000/login-queue    
+    ```
+
+- Once we view the message that is obtained from AWS SQS, run your application in the virtual environment:
+
+    ```bash
+    python DataProcessor.py
+    ```
+
+- Once the script has been executed and verified that no errors are obtained, we can verify in Postgres if the table with the data we obtained exists, we execute the following commands in the terminal:
+
+    ```bash
+    psql -d postgres -U postgres -p 5432 -h localhost -W
+    ```
+
+- If we want to see the table in Postgres, let's perform a query:
+
+    ```bash
+    select * from user_logins;
+    ```
+
+- We have to visualize something similar to the image:
+
+    ![Terminal](Images\terminal.png)
+
