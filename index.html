@@ -1,157 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>My Website</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('Images/Ciencia-de-Datos.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            text-align: center;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-
-        .overlay {
-            background: rgba(0, 0, 0, 0.5);
-            text-align: center;
-            padding: 20px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .card {
-            width: 30%;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 10px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>IDE Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="overlay">
-        <h1>Welcome to my Website</h1>
-        <p>This is an example Website</p>
+    <div class="fondo">
+        <h2>Learn the best coding practices in productive environments</h2>
+        <br />
+        <h3>Have you asked yourself</h3>
+        <h3>-How to get to the next level with my code?</h3>
+        <h3>-How to create code that works for production environments?</h3>
+        <h3>-What practices are used in the industry that I could implement in my own projects?</h3>
+        
     </div>
+    <br />
+    <div class="text">
+        <h2>What we offer?</h2>
+        <br />
+        <h3>We have designed a path that will allow you to learn the fundamentals of each area necessary to take your code to the next level.</h3>
+        <br />
+        <h3>Although the content is focused (for now) on data engineering projects, you can perfectly apply it to any other type of project, even when it is not data.</h3>
+        <br /><br />
+        <h2>Content</h2>
     </div>
     
-    <div class="card-container">
-        <div class="card">
-            <h2>1 - Introduction</h2>
-            <p>This module talks about the course, scope, installation of necessary programs.</p>
-            <p>1.1 - About this course
-                - Content
-                - Scope
-              1.2 - Prerequisites
-                - What do you need to take this course?
-                - Registration in Superprof website
-              1.3 - Costs
-              1.4 - Resources
-                - Course resources
-              1.5 - Setup
-                - Software installation</p>
-        </div>
-        </div>
-
-        <div class="card">
-            <h2>2 - Fundamentals of Python</h2>
-            <p>This module talks about the fundamentals of Python for data topics, especially for Data Engineering.</p>
-            <p>2.1 - Virtual environments (1 hour)
-                - How to use virtual environments
-                - [DEMO] 
-                - [ACTIVITY] Version corrections
-              2.2 - Introduction to Python (1 hour)
-              2.2.1 - Recap basics Python
-                - Data types
-                - Functions
-                - [DEMO] Descarga de archivos CDMX
-                - [ACTIVITY] Refactor code
-              2.2.2 - Documentation
-                - Coding conventions (PEP8)
-                - Annotations
-                - Best practices in code
-                - Docstrings
-              2.3 - Task automation (2 hours)
-                - Organize files
-                - Read and write files
-                - Debugging
-              2.4 - POO (Optional)</p>
-        </div>
-
-        <div class="card">
-            <h2>3 - Fundamentals of Software Development</h2>
-            <p>This module talks about the fundamentals of software development for data issues, software tools, good practices, among other things.</p>
-            <p>3.1 - Introduction
-                - Fundamentals of software development
-                - Gather requirements
-                - Design and development of a data engineering project
-                - Software deployment
-              3.2 - Jupyter Notebooks
-                - Google Colab development
-                - Local development
-              3.3 - Folder structure
-                - Working folder structure
-              3.4 - Version control
-                - Intro to GitHub
-                - Git fundamentals
-                - Collaborating on GitHub
-                - README.md</p>
-        </div>
-
-        <div class="card">
-            <h2>Module 4</h2>
-            <p>Description for Module 4</p>
-            <p>Content for Module 4</p>
-        </div>
-
-        <div class="card">
-            <h2>Module 5</h2>
-            <p>Description for Module 5</p>
-            <p>Content for Module 5</p>
-        </div>
-
-        <div class="card">
-            <h2>Module 6</h2>
-            <p>Description for Module 6</p>
-            <p>Content for Module 6</p>
-        </div>
-
-        <div class="card">
-            <h2>Module 7</h2>
-            <p>Description for Module 7</p>
-            <p>Content for Module 7</p>
-        </div>
-
-        <div class="card">
-            <h2>Module 8</h2>
-            <p>Description for Module 8</p>
-            <p>Content for Module 8</p>
-        </div>
-
-        <div class="card">
-            <h2>Module 9</h2>
-            <p>Description for Module 9</p>
-            <p>Content for Module 9</p>
-        </div>
+    
+    <div class="fondo2">
+        <h3>Explore our course content. Includes everything from fundamentals to advanced topics.</h3>
     </div>
+    <form action="" method="">
+        <label for="Name"> Name:</label>
+        <input type="text" id="Name" placeholder="Write your name here" name="Name">
+        <br />
+        <label for="email"> Email:</label>
+        <input type="email" id="email" placeholder="Write your email here" name="Email">
+        <br />
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" placeholder="Write your message here"></textarea>
+        <br />
+        <input type="submit" value="Send">
+
+    </form>
 </body>
 </html>
