@@ -764,10 +764,11 @@ banner
   font-weight: 900;
 }
 
-.main-banner .caption p {
+.main-banner .caption h3 {
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   max-width: 600px;
+  white-space: nowrap;
 }
 
 .main-banner .caption .main-button-red {
@@ -782,6 +783,10 @@ banner
 
   .main-banner .caption h2 {
     font-size: 36px;
+  }
+
+  .main-banner .caption h3 {
+    white-space: normal;
   }
 
 }
